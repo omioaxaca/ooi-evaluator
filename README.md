@@ -1,13 +1,140 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# CodeJudge Pro - Next.js Edition
 
-## Getting Started
+Una plataforma completa de juez de código online construida con Next.js y arquitectura screaming (arquitectura de dominio).
 
-First, run the development server:
+## 🏗️ Arquitectura Screaming
+
+Este proyecto implementa **screaming architecture**, donde la estructura de carpetas comunica claramente el propósito del negocio. La organización está basada en **características (features)** en lugar de capas técnicas.
+
+### Estructura del Proyecto
+
+```
+app/
+├── dashboard/           # Feature: Panel de control
+│   ├── Dashboard.tsx   # Componente principal del dashboard
+│   └── StatCard.tsx    # Componente de tarjeta de estadísticas
+├── challenges/          # Feature: Lista de desafíos
+│   └── ChallengeList.tsx
+├── arena/              # Feature: Espacio de trabajo de código
+│   └── CodeWorkspace.tsx
+├── profile/            # Feature: Perfil de usuario
+│   ├── UserProfile.tsx
+│   └── RechartsWrapper.tsx
+├── components/         # Componentes compartidos
+│   ├── Icons.tsx
+│   └── Navbar.tsx
+├── page.tsx            # Página principal (CSR)
+├── layout.tsx          # Layout raíz
+└── globals.css         # Estilos globales
+types.ts                # Definiciones de tipos TypeScript
+```
+
+## 🎯 Características Principales
+
+### Dashboard
+- Vista general del progreso del usuario
+- Tarjetas de estadísticas de habilidades
+- Historial de submissions recientes
+- Kit de preparación recomendado
+
+### Challenges
+- Lista de desafíos con filtros
+- Dificultad por colores (Fácil, Medio, Difícil)
+- Búsqueda de desafíos
+- Estado de resolución
+
+### Arena (Code Workspace)
+- Editor de código simulado
+- Panel de descripción del problema
+- Selector de lenguaje de programación
+- Opciones de ejecución y envío
+
+### Profile
+- Información del usuario
+- Badges y logros
+- Gráfico de actividad (Recharts)
+- Información educativa
+
+## 🚀 CSR (Client-Side Rendering)
+
+Este proyecto está configurado completamente como una **Single Page Application (SPA)** usando Next.js con CSR:
+
+- ✅ Todos los componentes usan `'use client'`
+- ✅ Navegación basada en estado (sin router de Next.js)
+- ✅ Sin Server Components
+- ✅ Interactividad completa del lado del cliente
+
+## 🛠️ Tecnologías
+
+- **Next.js 16** - Framework React
+- **React 19** - Biblioteca UI
+- **TypeScript** - Type safety
+- **Tailwind CSS 4** - Estilos
+- **Lucide React** - Iconos
+- **Recharts** - Gráficos
+- **Biome** - Linter y formatter
+
+## 📦 Instalación
 
 ```bash
+# Instalar dependencias
+npm install
+
+# Modo desarrollo
 npm run dev
-# or
-yarn dev
+
+# Build de producción
+npm run build
+
+# Iniciar servidor de producción
+npm start
+
+# Lint
+npm run lint
+
+# Format
+npm run format
+```
+
+## 🎨 Tema Dark/Light
+
+El proyecto incluye soporte completo para modo oscuro con:
+- Persistencia en localStorage
+- Detección de preferencia del sistema
+- Toggle manual en el navbar
+
+## 🏛️ Principios de Screaming Architecture
+
+1. **Claridad de propósito**: La estructura de carpetas revela inmediatamente las funcionalidades del negocio
+2. **Separación por features**: Cada carpeta representa una característica completa del dominio
+3. **Cohesión alta**: Componentes relacionados están juntos
+4. **Bajo acoplamiento**: Las features son independientes entre sí
+5. **Escalabilidad**: Fácil agregar nuevas features sin modificar la estructura existente
+
+## 📝 Tipos de Datos
+
+Los tipos principales se definen en `types.ts`:
+- `Challenge` - Desafío de programación
+- `ViewState` - Estados de vista de la aplicación
+- `Submission` - Submission de código
+- `UserStats` - Estadísticas del usuario
+
+## 🎯 Próximos Pasos
+
+- [ ] Integrar backend API
+- [ ] Agregar autenticación
+- [ ] Implementar editor de código real (Monaco/CodeMirror)
+- [ ] Sistema de testing automatizado
+- [ ] Leaderboards en tiempo real
+- [ ] WebSocket para actualizaciones live
+
+## 📄 Licencia
+
+Este proyecto es parte de un ejercicio de evaluación.
+
+---
+
+**Desarrollado con Next.js y Screaming Architecture** 🎉
 # or
 pnpm dev
 # or
