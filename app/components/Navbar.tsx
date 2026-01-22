@@ -21,10 +21,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate, isDark,
             onClick={() => onNavigate(ViewState.DASHBOARD)}
           >
             <div className="flex h-8 w-8 items-center justify-center rounded bg-brand-600 text-white font-bold">
-              CJ
+              <img src="/favicon.ico" alt="OOI Logo" className="h-full w-full" />
             </div>
             <span className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-              CodeJudge
+              Juez OOI
             </span>
           </div>
 
@@ -33,20 +33,20 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate, isDark,
               onClick={() => onNavigate(ViewState.DASHBOARD)}
               className={`${currentView === ViewState.DASHBOARD ? 'text-brand-600 dark:text-brand-500' : 'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100'}`}
             >
-              Dashboard
+              Panel
             </button>
             <button 
               onClick={() => onNavigate(ViewState.PROBLEMS)}
               className={`${currentView === ViewState.PROBLEMS || currentView === ViewState.WORKSPACE ? 'text-brand-600 dark:text-brand-500' : 'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100'}`}
             >
-              Problems
+              Problemas
             </button>
-            <button className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100">
+            {/* <button className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100">
               Certify
             </button>
             <button className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100">
               Compete
-            </button>
+            </button> */}
           </div>
         </div>
 

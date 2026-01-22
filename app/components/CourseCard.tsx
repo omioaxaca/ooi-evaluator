@@ -11,7 +11,7 @@ interface StatCardProps {
   colorClass: string;
 }
 
-export const StatCard: React.FC<StatCardProps> = ({ title, subtitle, progress, icon, colorClass }) => {
+export const CourseCard: React.FC<StatCardProps> = ({ title, subtitle, progress, icon, colorClass }) => {
   return (
     <div className="group relative overflow-hidden rounded-xl border border-gray-200 bg-white p-6 transition-shadow hover:shadow-lg dark:border-dark-border dark:bg-dark-surface">
       <div className="flex items-start justify-between">
@@ -31,8 +31,8 @@ export const StatCard: React.FC<StatCardProps> = ({ title, subtitle, progress, i
       
       <div className="mt-4">
         <div className="flex items-center justify-between text-xs font-medium text-gray-500 dark:text-gray-400">
-          <span>{progress}% Complete</span>
-          <span>{100 - progress} points to next star</span>
+          <span>{progress}% Completado</span>
+          <span>{100 - progress}% restante</span>
         </div>
         <div className="mt-2 h-2 w-full rounded-full bg-gray-100 dark:bg-gray-700">
           <div 

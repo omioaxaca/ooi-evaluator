@@ -71,8 +71,8 @@ export default function Home() {
       </main>
       
       {/* Global Footer (Simple) */}
-      <footer className="mt-auto border-t border-gray-200 bg-white py-6 text-center text-sm text-gray-500 dark:border-dark-border dark:bg-dark-surface dark:text-gray-400">
-        <p>&copy; 2023 CodeJudge Pro. All rights reserved.</p>
+      <footer className="bottom-0 left-0 right-0 border-t border-gray-200 bg-white py-6 text-center text-sm text-gray-500 dark:border-dark-border dark:bg-dark-surface dark:text-gray-400">
+        <p>&copy; 2026 Olimpiada Oaxaquena de Informatica. Todos los derechos reservados.</p>
       </footer>
     </div>
   );

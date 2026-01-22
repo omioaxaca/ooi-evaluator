@@ -2,8 +2,10 @@
 
 import React from 'react';
 import { Code2, Trophy, Terminal, LayoutDashboard, ChevronRight } from '../components/Icons';
-import { StatCard } from './StatCard';
+// import { StatCard } from './StatCard';
+import { CourseCard } from '../components/CourseCard';
 import { Submission, ViewState } from '@/types';
+import { LearningPathCard } from '../components/LearningPathCard';
 
 interface DashboardProps {
   onNavigate: (view: ViewState) => void;
@@ -21,74 +23,41 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
       {/* Header */}
       <div>
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Dashboard</h1>
-        <p className="mt-1 text-gray-500 dark:text-gray-400">Welcome back, Alex. Ready to solve some problems?</p>
+        <p className="mt-1 text-gray-500 dark:text-gray-400">Bienvenido de nuevo, Alex. ¿Listo para resolver algunos problemas?</p>
       </div>
 
       {/* Hero / Prep Kit */}
-      <div className="relative overflow-hidden rounded-2xl bg-dark-surface border border-dark-border p-8 shadow-2xl">
-        <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div>
-            <div className="inline-flex items-center rounded-full bg-brand-900/50 px-3 py-1 text-xs font-medium text-brand-200 ring-1 ring-inset ring-brand-700/30">
-              Recommended Path
-            </div>
-            <h2 className="mt-4 text-3xl font-bold text-white">Software Engineer Prep Kit</h2>
-            <p className="mt-2 max-w-xl text-gray-300">
-              Master the fundamental skills to become a software engineer. This path covers algorithms, data structures, and system design basics.
-            </p>
-            <div className="mt-6 flex items-center gap-4 text-sm text-gray-400">
-              <span className="flex items-center gap-1"><Terminal className="h-4 w-4" /> 53 Challenges</span>
-              <span className="flex items-center gap-1"><Trophy className="h-4 w-4" /> 1 Mock Test</span>
-            </div>
-          </div>
-          <button 
-            onClick={() => onNavigate(ViewState.PROBLEMS)}
-            className="flex items-center gap-2 rounded-lg bg-brand-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-brand-500 shadow-lg shadow-brand-900/20"
-          >
-            Continue Learning
-            <ChevronRight className="h-4 w-4" />
-          </button>
-        </div>
-        {/* Decorative background element */}
-        <div className="absolute top-0 right-0 -mt-16 -mr-16 h-64 w-64 rounded-full bg-brand-500 opacity-10 blur-3xl"></div>
-      </div>
-
-      {/* Skills Grid */}
+      <LearningPathCard 
+        onNavigate={onNavigate}
+        course_type="Continua tu aprendizaje"
+        title="Introduccion a la Programacion"
+        description="Aprende los fundamentos necesarios para ser un maestro de la programación."
+        course_length="8 semanas"
+        course_difficulty="Principiante"
+      />
+      {/* Grid de Cursos */}
       <div>
-        <h2 className="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Your Skills</h2>
+        <h2 className="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Mis Cursos</h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
-          <StatCard 
-            title="Problem Solving" 
-            subtitle="Basics & Intermediate" 
+          <CourseCard 
+            title="Introduccion a la Programacion" 
+            subtitle="Basicos y Fundamentos" 
+            progress={72} 
+            icon={<Code2 className="h-6 w-6 text-yellow-600 dark:text-yellow-400" />}
+            colorClass="bg-yellow-500 text-yellow-600"
+          />
+          <CourseCard 
+            title="Introduccion a c++" 
+            subtitle="Basicos e Intermedios" 
             progress={88} 
             icon={<Code2 className="h-6 w-6 text-purple-600 dark:text-purple-400" />}
             colorClass="bg-purple-500 text-purple-600"
-          />
-          <StatCard 
-            title="Python" 
-            subtitle="Advanced Concepts" 
-            progress={45} 
-            icon={<Terminal className="h-6 w-6 text-yellow-600 dark:text-yellow-400" />}
-            colorClass="bg-yellow-500 text-yellow-600"
-          />
-          <StatCard 
-            title="Algorithms" 
-            subtitle="Sorting & Searching" 
-            progress={24} 
-            icon={<LayoutDashboard className="h-6 w-6 text-pink-600 dark:text-pink-400" />}
-            colorClass="bg-pink-500 text-pink-600"
-          />
-           <StatCard 
-            title="Databases" 
-            subtitle="SQL & Normalization" 
-            progress={12} 
-            icon={<LayoutDashboard className="h-6 w-6 text-blue-600 dark:text-blue-400" />}
-            colorClass="bg-blue-500 text-blue-600"
           />
         </div>
       </div>
 
       {/* Recent Submissions */}
-      <div>
+      {/* <div>
         <h2 className="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Recent Activity</h2>
         <div className="overflow-hidden rounded-xl border border-gray-200 bg-white dark:border-dark-border dark:bg-dark-surface">
           <table className="w-full text-left text-sm">
@@ -120,7 +89,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
             </tbody>
           </table>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
