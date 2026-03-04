@@ -4,9 +4,9 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   reactStrictMode: true,
-  output: "export", // Forzar exportación estática (SPA pura sin SSR)
+  output: "export",
   images: {
-    unoptimized: true, // Necesario para export mode
+    unoptimized: true,
   },
 };
 
